@@ -44,7 +44,7 @@ Let there be T floors, N eggs, and at most M attempts to find the critical floor
 
 Assume the first egg is dropped from floor k. If it breaks, the remaining attempts are M(k,N-1), and if it doesn't break, the remaining attempts are M(T-k,N).
 
-Hence, for this case, M<sub>k</sub>(T,N) = max{M(k,N-1),M(T-k,N)} + 1.
+Hence, for this case, M<sub>k</sub>(T,N) = max{M(k-1,N-1),M(T-k,N)} + 1.
 
 Since k can take any value from 1 to T, we need to find the optimal solution, so M(T,N) = min{M<sub>1</sub>,M<sub>2</sub>,...,M<sub>T</sub>}.
 
@@ -54,11 +54,10 @@ Thus, we can recursively compute the values of M(T,N).
 
 **Usage**: Run `two_egg_problem.py`. Input floor number and egg number.
 
-**Example**: 
+**Example**:
 
 ```
 Floor number:100
 Egg number:2
 At least 14 drops are needed.
 ```
-
